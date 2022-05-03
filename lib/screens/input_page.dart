@@ -18,7 +18,7 @@ class _InputPageState extends State<InputPage> {
   int joints = 0;
   int externalReactions = 0;
   int releasedReactions = 0;
-  StructureType selectedStructure;
+  StructureType selectedStructure = StructureType.frame;
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;

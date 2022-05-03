@@ -21,8 +21,6 @@ class CalculatorBrain {
           (3 * members + externalReactions) - (3 * joints + releasedReactions);
     } else if (structure == StructureType.truss) {
       _staticIndeterminacy = (members + externalReactions) - (2 * joints);
-    } else {
-      return 'No Structure Selected!';
     }
     return _staticIndeterminacy.toString();
   }

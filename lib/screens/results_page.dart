@@ -38,7 +38,7 @@ class ResultsPage extends StatelessWidget {
                     flex: 1,
                     child: Center(
                       child: Text(
-                        'Your Result',
+                        'The Static Indeterminacy is',
                         style: kResultScreenTitleStyle,
                       ),
                     ),
@@ -56,17 +56,26 @@ class ResultsPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Text(
-                              resultKeyword,
-                              style: TextStyle(
-                                color: color,
-                                fontSize: 17,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                            Text(
                               staticIndeterminacy,
                               style: kResultNumberTextStyle,
+                            ),
+                            Column(
+                              children: [
+                                Text(
+                                  'The structure is',
+                                  style: kResultDescriptionStyle,
+                                ),
+                                Text(
+                                  resultKeyword,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: color,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),

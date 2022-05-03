@@ -1,4 +1,4 @@
-package co.appbrewery.bmicalculator;
+package tech.srocks.indecalc;
 
 import io.flutter.embedding.android.FlutterActivity;
 
