@@ -48,9 +48,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sarva\Flutter Projects\inde-calc" />
+      <recent name="C:\Users\sarva\Flutter Projects\inde-calc\assets" />
+      <recent name="C:\Users\sarva\Flutter Projects\inde-calc\android\app\src\main\res" />
       <recent name="C:\Users\sarva\Flutter Projects\inde-calc\lib\images" />
       <recent name="C:\Users\sarva\Flutter Projects\bmi-calculator-app\lib\components" />
-      <recent name="C:\Users\sarva\Flutter Projects\bmi-calculator-app\lib\screens" />
     </key>
   </component>
   <component name="RunManager">
@@ -90,7 +91,7 @@
       <workItem from="1643602783966" duration="751000" />
       <workItem from="1644115333219" duration="589000" />
       <workItem from="1651535991906" duration="11564000" />
-      <workItem from="1651579380307" duration="8202000" />
+      <workItem from="1651579380307" duration="11874000" />
     </task>
     <servers />
   </component>
