@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="320fad3c-873f-4b5d-a0ef-ad463cac1d19" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23HniitNrgVe34qR6SRrH8WBVoW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowCommit.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sarva\Flutter Projects\inde-calc" />
+      <recent name="C:\Users\sarva\Flutter Projects\inde-calc\lib\images" />
+      <recent name="C:\Users\sarva\Flutter Projects\bmi-calculator-app\lib\components" />
+      <recent name="C:\Users\sarva\Flutter Projects\bmi-calculator-app\lib\screens" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="320fad3c-873f-4b5d-a0ef-ad463cac1d19" name="Changes" comment="" />
+      <created>1641400010590</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641400010590</updated>
+      <workItem from="1641400014918" duration="311000" />
+      <workItem from="1641400374965" duration="4863000" />
+      <workItem from="1641407525779" duration="281000" />
+      <workItem from="1641407835306" duration="18938000" />
+      <workItem from="1641432298043" duration="31000" />
+      <workItem from="1641476664325" duration="11976000" />
+      <workItem from="1641580815081" duration="10166000" />
+      <workItem from="1641596208771" duration="11191000" />
+      <workItem from="1641647697563" duration="10660000" />
+      <workItem from="1641676796463" duration="15440000" />
+      <workItem from="1641740047235" duration="10051000" />
+      <workItem from="1641854589197" duration="129000" />
+      <workItem from="1641856343884" duration="15000" />
+      <workItem from="1642874441785" duration="28000" />
+      <workItem from="1642882434804" duration="776000" />
+      <workItem from="1643139542659" duration="1998000" />
+      <workItem from="1643143147308" duration="62000" />
+      <workItem from="1643602783966" duration="751000" />
+      <workItem from="1644115333219" duration="589000" />
+      <workItem from="1651535991906" duration="6522000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
