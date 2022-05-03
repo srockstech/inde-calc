@@ -8,8 +8,6 @@ import 'results_page.dart';
 import 'package:bmi_calculator/components/round_icon_button.dart';
 import 'package:bmi_calculator/calculator_brain.dart';
 
-enum StructureType { frame, truss }
-
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -297,14 +295,17 @@ class _InputPageState extends State<InputPage> {
           ),
           BottomButton(
             onPress: () {
-              CalculatorBrain result =
-                  CalculatorBrain(height: members, weight: externalReactions);
+              CalculatorBrain result = CalculatorBrain(
+                  members: members,
+                  joints: joints,
+                  externalReactions: externalReactions,
+                  releasedReactions: releasedReactions,
+                  structure: selectedStructure);
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => ResultsPage(
-                    bmi: result.calculateBMI(),
-                    interpretation: result.getInterpretation(),
+                    staticIndeterminacy: result.calculateStaticIndeterminacy(),
                     resultKeyword: result.getResultKeyword(),
                   ),
                 ),

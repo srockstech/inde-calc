@@ -4,15 +4,20 @@ import 'package:flutter/material.dart';
 import '../components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
-  final String bmi;
+  final String staticIndeterminacy;
   final String resultKeyword;
-  final String interpretation;
+  Color color;
   ResultsPage(
-      {@required this.bmi,
-      @required this.resultKeyword,
-      @required this.interpretation});
+      {@required this.staticIndeterminacy, @required this.resultKeyword});
   @override
   Widget build(BuildContext context) {
+    if (resultKeyword == 'DETERMINATE & STABLE') {
+      color = Color(0xFF2BD471);
+    } else if (resultKeyword == 'INDETERMINATE') {
+      color = Colors.deepOrangeAccent;
+    } else {
+      color = Colors.red;
+    }
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -53,22 +58,15 @@ class ResultsPage extends StatelessWidget {
                             Text(
                               resultKeyword,
                               style: TextStyle(
-                                color: (resultKeyword == 'NORMAL')
-                                    ? Color(0xFF2BD471)
-                                    : Colors.red,
+                                color: color,
                                 fontSize: 17,
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: 1,
                               ),
                             ),
                             Text(
-                              bmi,
+                              staticIndeterminacy,
                               style: kResultNumberTextStyle,
-                            ),
-                            Text(
-                              interpretation,
-                              style: kResultDescriptionStyle,
-                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),

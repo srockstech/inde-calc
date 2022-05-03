@@ -6,7 +6,7 @@ const kCalculateButtonColour = Color(0xFFEB1555);
 const kSliderActiveColour = Colors.white;
 const kSliderInactiveColour = Color(0xFF8D8E98);
 const kSliderMinValue = 0.0;
-const kSliderMaxValue = 200.0;
+const kSliderMaxValue = 100.0;
 const kSliderThumbColour = Color(0xFFEB1555);
 const kSliderThumbRadius = 15.0;
 const kSliderThumbOverlayRadius = 25.0;
@@ -48,3 +48,5 @@ const kResultDescriptionStyle = TextStyle(
   fontSize: 20,
   height: 1.7,
 );
+
+enum StructureType { frame, truss }

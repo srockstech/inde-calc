@@ -1,35 +1,39 @@
 import 'dart:math';
+import 'constants.dart';
 
 class CalculatorBrain {
-  int height;
-  int weight;
-  String gender;
-  int age;
-  double _bmi;
-  CalculatorBrain({this.height, this.weight});
+  int members;
+  int joints;
+  int externalReactions;
+  int releasedReactions;
+  StructureType structure;
+  int _staticIndeterminacy;
+  CalculatorBrain(
+      {this.members,
+      this.joints,
+      this.externalReactions,
+      this.releasedReactions,
+      this.structure});
 
-  String calculateBMI() {
-    _bmi = weight / pow(height / 100, 2);
-    return _bmi.toStringAsFixed(1);
+  String calculateStaticIndeterminacy() {
+    if (structure == StructureType.frame) {
+      _staticIndeterminacy =
+          (3 * members + externalReactions) - (3 * joints + releasedReactions);
+    } else if (structure == StructureType.truss) {
+      _staticIndeterminacy = (members + externalReactions) - (2 * joints);
+    } else {
+      return 'No Structure Selected!';
+    }
+    return _staticIndeterminacy.toString();
   }
 
   String getResultKeyword() {
-    if (_bmi >= 25) {
-      return 'OVERWEIGHT';
-    } else if (_bmi >= 18.5) {
-      return 'NORMAL';
+    if (_staticIndeterminacy == 0) {
+      return 'DETERMINATE & STABLE';
+    } else if (_staticIndeterminacy > 0) {
+      return 'INDETERMINATE';
     } else {
-      return 'UNDERWEIGHT';
-    }
-  }
-
-  String getInterpretation() {
-    if (_bmi >= 25) {
-      return 'You have a higher than normal body weight. Try to exercise more.';
-    } else if (_bmi >= 18.5) {
-      return 'You have a normal body weight. Good job!';
-    } else {
-      return 'You have a lower than normal body weight. Try to gain muscle mass.';
+      return 'UNSTABLE';
     }
   }
 }
