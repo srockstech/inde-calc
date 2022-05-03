@@ -8,7 +8,7 @@ import 'results_page.dart';
 import 'package:bmi_calculator/components/round_icon_button.dart';
 import 'package:bmi_calculator/calculator_brain.dart';
 
-enum Gender { male, female }
+enum StructureType { frame, truss }
 
 class InputPage extends StatefulWidget {
   @override
@@ -16,10 +16,11 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  int height = 180;
-  int weight = 60;
-  int age = 19;
-  Gender selectedGender;
+  int members = 1;
+  int joints = 0;
+  int externalReactions = 0;
+  int releasedReactions = 0;
+  StructureType selectedStructure;
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
@@ -51,18 +52,19 @@ class _InputPageState extends State<InputPage> {
                           child: ReusableCard(
                             onPress: () {
                               setState(() {
-                                selectedGender = Gender.male;
+                                selectedStructure = StructureType.frame;
                               });
                             },
-                            colour: selectedGender == Gender.male
+                            colour: selectedStructure == StructureType.frame
                                 ? kInactiveCardColour
                                 : kActiveCardColour,
                             cardChild: OptionCardContent(
                               screenHeight: screenHeight,
                               screenWidth: screenWidth,
-                              assetImage: selectedGender == Gender.male
-                                  ? 'images/frame_white.png'
-                                  : 'images/frame_grey.png',
+                              assetImage:
+                                  selectedStructure == StructureType.frame
+                                      ? 'images/frame_white.png'
+                                      : 'images/frame_grey.png',
                               title: 'FRAME',
                             ),
                           ),
@@ -71,18 +73,19 @@ class _InputPageState extends State<InputPage> {
                           child: ReusableCard(
                             onPress: () {
                               setState(() {
-                                selectedGender = Gender.female;
+                                selectedStructure = StructureType.truss;
                               });
                             },
-                            colour: selectedGender == Gender.female
+                            colour: selectedStructure == StructureType.truss
                                 ? kInactiveCardColour
                                 : kActiveCardColour,
                             cardChild: OptionCardContent(
                               screenHeight: screenHeight,
                               screenWidth: screenWidth,
-                              assetImage: selectedGender == Gender.female
-                                  ? 'images/truss_white.png'
-                                  : 'images/truss_grey.png',
+                              assetImage:
+                                  selectedStructure == StructureType.truss
+                                      ? 'images/truss_white.png'
+                                      : 'images/truss_grey.png',
                               title: 'TRUSS',
                             ),
                           ),
@@ -92,55 +95,109 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     flex: 30,
-                    child: ReusableCard(
-                      cardChild: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'HEIGHT',
-                            style: kTitleStyle,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.baseline,
-                            textBaseline: TextBaseline.alphabetic,
-                            children: <Widget>[
-                              Text(
-                                height.toString(),
-                                style: kNumberStyle,
-                              ),
-                              Text(
-                                'cm',
-                                style: kTitleStyle,
-                              )
-                            ],
-                          ),
-                          SliderTheme(
-                            data: SliderTheme.of(context).copyWith(
-                              activeTrackColor: kSliderActiveColour,
-                              inactiveTrackColor: kSliderInactiveColour,
-                              thumbColor: kSliderThumbColour,
-                              thumbShape: RoundSliderThumbShape(
-                                  enabledThumbRadius: kSliderThumbRadius),
-                              overlayShape: RoundSliderOverlayShape(
-                                  overlayRadius: kSliderThumbOverlayRadius),
-                              overlayColor: kSliderThumbOverlayColour,
-                              trackHeight: kSliderTrackHeight,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: ReusableCard(
+                            cardChild: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'MEMBERS',
+                                  style: kTitleStyle,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.baseline,
+                                  textBaseline: TextBaseline.alphabetic,
+                                  children: <Widget>[
+                                    Text(
+                                      members.toString(),
+                                      style: kNumberStyle,
+                                    ),
+                                  ],
+                                ),
+                                SliderTheme(
+                                  data: SliderTheme.of(context).copyWith(
+                                    activeTrackColor: kSliderActiveColour,
+                                    inactiveTrackColor: kSliderInactiveColour,
+                                    thumbColor: kSliderThumbColour,
+                                    thumbShape: RoundSliderThumbShape(
+                                        enabledThumbRadius: kSliderThumbRadius),
+                                    overlayShape: RoundSliderOverlayShape(
+                                        overlayRadius:
+                                            kSliderThumbOverlayRadius),
+                                    overlayColor: kSliderThumbOverlayColour,
+                                    trackHeight: kSliderTrackHeight,
+                                  ),
+                                  child: Slider(
+                                    value: members.toDouble(),
+                                    onChanged: (double newValue) {
+                                      setState(() {
+                                        members = newValue.toInt();
+                                      });
+                                    },
+                                    min: kSliderMinValue,
+                                    max: kSliderMaxValue,
+                                  ),
+                                )
+                              ],
                             ),
-                            child: Slider(
-                              value: height.toDouble(),
-                              onChanged: (double newValue) {
-                                setState(() {
-                                  height = newValue.toInt();
-                                });
-                              },
-                              min: kSliderMinValue,
-                              max: kSliderMaxValue,
+                            colour: kActiveCardColour,
+                          ),
+                        ),
+                        Expanded(
+                          child: ReusableCard(
+                            cardChild: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'JOINTS',
+                                  style: kTitleStyle,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.baseline,
+                                  textBaseline: TextBaseline.alphabetic,
+                                  children: <Widget>[
+                                    Text(
+                                      joints.toString(),
+                                      style: kNumberStyle,
+                                    ),
+                                  ],
+                                ),
+                                SliderTheme(
+                                  data: SliderTheme.of(context).copyWith(
+                                    activeTrackColor: kSliderActiveColour,
+                                    inactiveTrackColor: kSliderInactiveColour,
+                                    thumbColor: kSliderThumbColour,
+                                    thumbShape: RoundSliderThumbShape(
+                                        enabledThumbRadius: kSliderThumbRadius),
+                                    overlayShape: RoundSliderOverlayShape(
+                                        overlayRadius:
+                                            kSliderThumbOverlayRadius),
+                                    overlayColor: kSliderThumbOverlayColour,
+                                    trackHeight: kSliderTrackHeight,
+                                  ),
+                                  child: Slider(
+                                    value: joints.toDouble(),
+                                    onChanged: (double newValue) {
+                                      setState(() {
+                                        joints = newValue.toInt();
+                                      });
+                                    },
+                                    min: kSliderMinValue,
+                                    max: kSliderMaxValue,
+                                  ),
+                                ),
+                              ],
                             ),
-                          )
-                        ],
-                      ),
-                      colour: kActiveCardColour,
+                            colour: kActiveCardColour,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Expanded(
@@ -153,11 +210,11 @@ class _InputPageState extends State<InputPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'WEIGHT',
+                                  'EXT. RXNS.',
                                   style: kTitleStyle,
                                 ),
                                 Text(
-                                  weight.toString(),
+                                  externalReactions.toString(),
                                   style: kNumberStyle,
                                 ),
                                 Row(
@@ -167,7 +224,7 @@ class _InputPageState extends State<InputPage> {
                                       icon: FontAwesomeIcons.minus,
                                       onPress: () {
                                         setState(() {
-                                          weight--;
+                                          externalReactions--;
                                         });
                                       },
                                     ),
@@ -178,7 +235,7 @@ class _InputPageState extends State<InputPage> {
                                       icon: FontAwesomeIcons.plus,
                                       onPress: () {
                                         setState(() {
-                                          weight++;
+                                          externalReactions++;
                                         });
                                       },
                                     ),
@@ -195,11 +252,11 @@ class _InputPageState extends State<InputPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'AGE',
+                                  'REL. RXNS.',
                                   style: kTitleStyle,
                                 ),
                                 Text(
-                                  age.toString(),
+                                  releasedReactions.toString(),
                                   style: kNumberStyle,
                                 ),
                                 Row(
@@ -209,7 +266,7 @@ class _InputPageState extends State<InputPage> {
                                       icon: FontAwesomeIcons.minus,
                                       onPress: () {
                                         setState(() {
-                                          age--;
+                                          releasedReactions--;
                                         });
                                       },
                                     ),
@@ -220,7 +277,7 @@ class _InputPageState extends State<InputPage> {
                                       icon: FontAwesomeIcons.plus,
                                       onPress: () {
                                         setState(() {
-                                          age++;
+                                          releasedReactions++;
                                         });
                                       },
                                     ),
@@ -241,7 +298,7 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             onPress: () {
               CalculatorBrain result =
-                  CalculatorBrain(height: height, weight: weight);
+                  CalculatorBrain(height: members, weight: externalReactions);
               Navigator.push(
                 context,
                 MaterialPageRoute(
