@@ -14,7 +14,7 @@ const kSliderThumbOverlayColour = Color(0x1FEB1555);
 const kSliderTrackHeight = 2.0;
 
 const kTitleStyle = TextStyle(
-  height: 2.0,
+  height: 1.0,
   fontSize: 15,
   fontWeight: FontWeight.w700,
   color: Color(0xFF8D8E98),
@@ -37,16 +37,11 @@ const kResultNumberTextStyle = TextStyle(
   fontWeight: FontWeight.w900,
 );
 
-const kResultScreenTitleStyle = TextStyle(
-  height: 2,
-  fontSize: 20,
-  fontWeight: FontWeight.bold,
-  letterSpacing: 2,
-);
-
 const kResultDescriptionStyle = TextStyle(
   fontSize: 20,
   height: 1.7,
 );
 
 enum StructureType { frame, truss, none }
+
+enum Dimensions { two, three }

@@ -6,6 +6,7 @@ class CalculatorBrain {
   int joints;
   int externalReactions;
   int releasedReactions;
+  Dimensions dimension;
   StructureType structure;
   int _staticIndeterminacy;
   CalculatorBrain(
@@ -13,14 +14,24 @@ class CalculatorBrain {
       this.joints,
       this.externalReactions,
       this.releasedReactions,
-      this.structure});
+      this.structure,
+      this.dimension});
 
   String calculateStaticIndeterminacy() {
-    if (structure == StructureType.frame) {
-      _staticIndeterminacy =
-          (3 * members + externalReactions) - (3 * joints + releasedReactions);
-    } else if (structure == StructureType.truss) {
-      _staticIndeterminacy = (members + externalReactions) - (2 * joints);
+    if (dimension == Dimensions.two) {
+      if (structure == StructureType.frame) {
+        _staticIndeterminacy = (3 * members + externalReactions) -
+            (3 * joints + releasedReactions);
+      } else if (structure == StructureType.truss) {
+        _staticIndeterminacy = (members + externalReactions) - (2 * joints);
+      }
+    } else if (dimension == Dimensions.three) {
+      if (structure == StructureType.frame) {
+        _staticIndeterminacy = (6 * members + externalReactions) -
+            (6 * joints + releasedReactions);
+      } else if (structure == StructureType.truss) {
+        _staticIndeterminacy = (members + externalReactions) - (3 * joints);
+      }
     }
     return _staticIndeterminacy.toString();
   }

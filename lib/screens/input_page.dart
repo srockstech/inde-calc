@@ -19,6 +19,7 @@ class _InputPageState extends State<InputPage> {
   int externalReactions = 0;
   int releasedReactions = 0;
   StructureType selectedStructure = StructureType.frame;
+  Dimensions dimension = Dimensions.two;
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
@@ -46,6 +47,7 @@ class _InputPageState extends State<InputPage> {
                     flex: 24,
                     child: Row(
                       children: [
+                        //Structures
                         Expanded(
                           child: ReusableCard(
                             onPress: () {
@@ -64,6 +66,10 @@ class _InputPageState extends State<InputPage> {
                                       ? 'images/frame_white.png'
                                       : 'images/frame_grey.png',
                               title: 'FRAME',
+                              titleColor:
+                                  selectedStructure == StructureType.frame
+                                      ? Colors.white
+                                      : Color(0xFF8D8E98),
                             ),
                           ),
                         ),
@@ -85,6 +91,58 @@ class _InputPageState extends State<InputPage> {
                                       ? 'images/truss_white.png'
                                       : 'images/truss_grey.png',
                               title: 'TRUSS',
+                              titleColor:
+                                  selectedStructure == StructureType.truss
+                                      ? Colors.white
+                                      : Color(0xFF8D8E98),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  //Dimensions
+                  Expanded(
+                    flex: 10,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: ReusableCard(
+                            onPress: () {
+                              setState(() {
+                                dimension = Dimensions.two;
+                              });
+                            },
+                            colour: dimension == Dimensions.two
+                                ? kInactiveCardColour
+                                : kActiveCardColour,
+                            cardChild: OptionCardContent(
+                              screenWidth: screenWidth,
+                              screenHeight: screenHeight,
+                              title: '2D',
+                              titleColor: dimension == Dimensions.two
+                                  ? Colors.white
+                                  : Color(0xFF8D8E98),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: ReusableCard(
+                            onPress: () {
+                              setState(() {
+                                dimension = Dimensions.three;
+                              });
+                            },
+                            colour: (dimension == Dimensions.three)
+                                ? kInactiveCardColour
+                                : kActiveCardColour,
+                            cardChild: OptionCardContent(
+                              screenWidth: screenWidth,
+                              screenHeight: screenHeight,
+                              title: '3D',
+                              titleColor: dimension == Dimensions.three
+                                  ? Colors.white
+                                  : Color(0xFF8D8E98),
                             ),
                           ),
                         ),
@@ -92,7 +150,7 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                   Expanded(
-                    flex: 30,
+                    flex: 24,
                     child: Row(
                       children: [
                         Expanded(
@@ -100,6 +158,9 @@ class _InputPageState extends State<InputPage> {
                             cardChild: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
+                                SizedBox(
+                                  height: 20,
+                                ),
                                 Text(
                                   'MEMBERS',
                                   style: kTitleStyle,
@@ -150,6 +211,7 @@ class _InputPageState extends State<InputPage> {
                             cardChild: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
+                                SizedBox(height: 20),
                                 Text(
                                   'JOINTS',
                                   style: kTitleStyle,
@@ -199,7 +261,7 @@ class _InputPageState extends State<InputPage> {
                     ),
                   ),
                   Expanded(
-                    flex: 30,
+                    flex: 24,
                     child: Row(
                       children: [
                         Expanded(
@@ -207,6 +269,7 @@ class _InputPageState extends State<InputPage> {
                             cardChild: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                SizedBox(height: 5),
                                 Text(
                                   'EXT. RXNS.',
                                   style: kTitleStyle,
@@ -249,6 +312,7 @@ class _InputPageState extends State<InputPage> {
                             cardChild: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
+                                SizedBox(height: 5),
                                 Text(
                                   'REL. RXNS.',
                                   style: kTitleStyle,
@@ -296,11 +360,13 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             onPress: () {
               CalculatorBrain result = CalculatorBrain(
-                  members: members,
-                  joints: joints,
-                  externalReactions: externalReactions,
-                  releasedReactions: releasedReactions,
-                  structure: selectedStructure);
+                members: members,
+                joints: joints,
+                externalReactions: externalReactions,
+                releasedReactions: releasedReactions,
+                structure: selectedStructure,
+                dimension: dimension,
+              );
               Navigator.push(
                 context,
                 MaterialPageRoute(

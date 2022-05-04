@@ -18,6 +18,9 @@ class ResultsPage extends StatelessWidget {
     } else {
       color = Colors.red;
     }
+
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -39,7 +42,13 @@ class ResultsPage extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'The Static Indeterminacy is',
-                        style: kResultScreenTitleStyle,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          height: 2,
+                          fontSize: screenWidth * 0.05,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 2,
+                        ),
                       ),
                     ),
                   ),
