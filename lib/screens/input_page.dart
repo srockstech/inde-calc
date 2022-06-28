@@ -123,7 +123,7 @@ class _InputPageState extends State<InputPage> {
                               title: '2D',
                               titleColor: dimension == Dimensions.two
                                   ? Colors.white
-                                  : Color(0xFF8D8E98),
+                                  : Color(0xFF999999),
                             ),
                           ),
                         ),

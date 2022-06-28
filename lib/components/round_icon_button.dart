@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inde_calc/constants.dart';
 
 class RoundIconButton extends StatelessWidget {
   final IconData icon;
@@ -9,7 +10,7 @@ class RoundIconButton extends StatelessWidget {
     return RawMaterialButton(
       onPressed: onPress,
       shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
+      fillColor: kRoundedIconButtonColor,
       constraints: BoxConstraints.tightFor(
         width: 50,
         height: 50,

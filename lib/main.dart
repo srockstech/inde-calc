@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'screens/input_page.dart';
 
 void main() => runApp(BMICalculator());
@@ -14,7 +15,8 @@ class BMICalculator extends StatelessWidget {
               primary: Color(0xFF0A0E21),
               secondary: Color(0xFFEB155),
             ),
-        scaffoldBackgroundColor: Color(0xFF0A0E21),
+        // scaffoldBackgroundColor: Color(0xFF0A0E21),
+        scaffoldBackgroundColor: Color(0xFF500E28),
         appBarTheme: AppBarTheme(
           titleTextStyle: TextStyle(
             color: Colors.white,
@@ -29,7 +31,7 @@ class BMICalculator extends StatelessWidget {
               ),
             ],
           ),
-          color: Color(0xFF0A0E21),
+          color: Color(0xFF500E28),
           // toolbarHeight: 40,
           // elevation: 0,
           centerTitle: true,
