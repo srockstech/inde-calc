@@ -1,12 +1,13 @@
-import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:inde_calc/calculator_brain.dart';
+import 'package:inde_calc/components/bottom_button.dart';
+import 'package:inde_calc/components/option_card_content.dart';
+import 'package:inde_calc/components/round_icon_button.dart';
+
 import '../components/card_widget.dart';
-import 'package:bmi_calculator/components/option_card_content.dart';
 import '../constants.dart';
 import 'results_page.dart';
-import 'package:bmi_calculator/components/round_icon_button.dart';
-import 'package:bmi_calculator/calculator_brain.dart';
 
 class InputPage extends StatefulWidget {
   @override

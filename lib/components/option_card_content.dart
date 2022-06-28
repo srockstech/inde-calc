@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bmi_calculator/constants.dart';
+import 'package:inde_calc/constants.dart';
 
 class OptionCardContent extends StatelessWidget {
   final String assetImage;
