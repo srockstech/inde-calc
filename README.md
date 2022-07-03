@@ -7,3 +7,4 @@ IndeCalc is a very handy app that civil engineers can use to determine the value
 It can be used to adjust the values of the parameters like number of members, joints, external reactions and released reactions, until the structure achieves stability by calculating the static indeterminacy of the proposed structure and knowing whether the structure will be determinate and stable, indeterminate or unstable.
 
 ## Preview:
+<img height="1920" width="1080" src="https://github.com/srockstech/inde-calc/blob/main/images/IndeCalc%20Preview.gif">
