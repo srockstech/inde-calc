@@ -47,7 +47,7 @@
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -55,11 +55,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sarva\Flutter Projects\inde-calc\android\app" />
       <recent name="C:\Users\sarva\Flutter Projects\inde-calc" />
       <recent name="C:\Users\sarva\Flutter Projects\inde-calc\assets" />
       <recent name="C:\Users\sarva\Flutter Projects\inde-calc\android\app\src\main\res" />
       <recent name="C:\Users\sarva\Flutter Projects\inde-calc\lib\images" />
-      <recent name="C:\Users\sarva\Flutter Projects\bmi-calculator-app\lib\components" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,7 +103,9 @@
       <workItem from="1651640835283" duration="10490000" />
       <workItem from="1651741104376" duration="585000" />
       <workItem from="1654280173024" duration="145000" />
-      <workItem from="1656395099095" duration="7525000" />
+      <workItem from="1656395099095" duration="15031000" />
+      <workItem from="1656764972048" duration="4999000" />
+      <workItem from="1656825477622" duration="2326000" />
     </task>
     <servers />
   </component>
